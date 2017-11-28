@@ -38,7 +38,7 @@ def get_queues(r):
         keySet = "MODULE_TYPE_" + queue
 
         for moduleNum in r.smembers(keySet):
-    
+
             value = r.get(key + str(moduleNum))
             if value is not None:
                 timestamp, path = value.split(", ")
@@ -49,6 +49,7 @@ def get_queues(r):
                     newData.append( (queue, card, seconds, moduleNum) )
                 else:
                     newData.append( (queue, cards, 0, moduleNum) )
+
 
     return newData
 

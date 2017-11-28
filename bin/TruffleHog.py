@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*-coding:UTF-8 -*
 
 import pprint
@@ -36,7 +36,11 @@ regex += r')'
 find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)
 
 
-def foo(message):
+def find_secrets(url):
+    truffleHog.find_strings(url)
+
+
+def find_git_repo(message):
     paste = Paste.Paste(message)
     content = paste.get_p_content()
 
@@ -65,4 +69,4 @@ if __name__ == "__main__":
         if message is None:
             continue
 
-        foo(message)
+        find_git_repo(message)
