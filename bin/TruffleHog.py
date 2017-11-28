@@ -33,7 +33,7 @@ regex += r'(git)'
 regex += r')'
 
 
-find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)gi
+find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)
 
 
 def find_secrets(url):
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     publisher.port = 6380
     publisher.channel = "Script"
 
-    config_section = 'CboModule'
+    config_section = 'TruffleHog'
 
     p = Process(config_section)
 
