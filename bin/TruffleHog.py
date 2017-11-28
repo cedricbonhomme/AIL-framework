@@ -65,7 +65,7 @@ if __name__ == "__main__":
     p = Process(config_section)
 
     # Sent to the logging a description of the module
-    publisher.info("Run CboModule module")
+    publisher.info("Run TruffleHog module")
 
     while True:
         message = p.get_from_set()
