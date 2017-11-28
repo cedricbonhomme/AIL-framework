@@ -37,7 +37,10 @@ find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)
 
 
 def find_secrets(url):
-    truffleHog.find_strings(url)
+    try:
+        truffleHog.find_strings(url)
+    except UnicodeEncodeError:
+        print("Unicode print error")
 
 
 def find_git_repo(message):
@@ -50,7 +53,7 @@ def find_git_repo(message):
         print("URL parts: " + str(url_git_repo.groups()))
         print("URL: " + url_git_repo.group(0).strip())
 
-        truffleHog.find_strings(url_git_repo.group(0).strip())
+        find_secrets(url_git_repo.group(0).strip())
 
 
 if __name__ == "__main__":
