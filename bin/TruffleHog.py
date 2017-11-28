@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*-coding:UTF-8 -*
 
 import pprint
@@ -33,7 +33,7 @@ regex += r'(git)'
 regex += r')'
 
 
-find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)
+find_git_repo_url_in_string = re.compile(regex, re.IGNORECASE)gi
 
 
 def find_secrets(url):

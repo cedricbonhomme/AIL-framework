@@ -50,7 +50,6 @@ def get_queues(r):
                 else:
                     newData.append( (queue, cards, 0, moduleNum) )
 
-
     return newData
 
 # ============ ROUTES ============
